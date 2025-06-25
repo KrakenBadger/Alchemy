@@ -1,0 +1,31 @@
+@mixin grid(
+  $rows: null,
+  $columns: null,
+  $gap: null,
+  $padding: null,
+  $full-height: false,
+  $center-items: false,
+) {
+  display: grid;
+  @if $rows { grid-template-rows: $rows; }
+  @if $columns { grid-template-columns: $columns; }
+  @if $gap { gap: $gap; }
+  @if $padding { padding: $padding; }
+  @if $full-height { 
+    min-height: 100vh; 
+    min-height: 100svh; 
+  }
+  @if $center-items { place-items: center; }
+}
+
+@mixin width-responsive($width, $margin: null, $centered: true) {
+  @if $margin {
+    width: min(100%, $width - $margin * 2);
+  }
+  @else {
+    width: min(100%, $width);
+  }
+  @if $centered {
+    margin-inline: auto;
+  }
+}

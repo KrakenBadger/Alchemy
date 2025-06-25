@@ -1,0 +1,57 @@
+@use "sass:map";
+
+:root {
+  // Font Stacks
+  --font-family-regular: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+  --font-family-display: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+  --font-family-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+
+  // Responsive Font Sizes
+  --font-size--5: clamp(0.4096rem, 0.799rem + -0.5025vw, 0.6985rem);
+  --font-size--4: clamp(0.512rem, 0.8576rem + -0.4459vw, 0.7684rem);
+  --font-size--3: clamp(0.64rem, 0.9166rem + -0.3569vw, 0.8452rem);
+  --font-size--2: clamp(0.8rem, 0.9749rem + -0.2257vw, 0.9298rem);
+  --font-size--1: clamp(1rem, 1.0306rem + -0.0395vw, 1.0227rem);
+  --font-size-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --font-size-1: clamp(1.2375rem, 1.1245rem + 0.5652vw, 1.5625rem);
+  --font-size-2: clamp(1.3613rem, 1.1554rem + 1.0293vw, 1.9531rem);
+  --font-size-3: clamp(1.4974rem, 1.169rem + 1.6418vw, 2.4414rem);
+  --font-size-4: clamp(1.6471rem, 1.1585rem + 2.4429vw, 3.0518rem);
+  --font-size-5: clamp(1.8118rem, 1.1152rem + 3.4833vw, 3.8147rem);
+  --font-size-6: clamp(1.993rem, 1.0277rem + 4.8267vw, 4.7684rem);
+  --font-size-7: clamp(2.1923rem, 0.8816rem + 6.5533vw, 5.9605rem);
+  --font-size-8: clamp(2.4115rem, 0.6588rem + 8.7636vw, 7.4506rem);
+  --font-size-9: clamp(2.6527rem, 0.336rem + 11.5835vw, 9.3132rem);
+  --font-size-10: clamp(2.918rem, -0.1163rem + 15.1714vw, 11.6415rem);
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+}
+
+
+$stacks: (
+  regular: var(--font-family-regular),
+  display: var(--font-family-display),
+  mono: var(--font-family-mono)
+);
+
+
+$weights: (
+  regular: var(--font-weight-regular),
+  bold: var(--font-weight-bold)
+);
+
+
+@mixin set($stack: regular, $size: 0, $weight: regular) {
+  font-family: map.get($stacks, $stack);
+  font-weight: map.get($weights, $weight);
+  font-size: var(--font-size-#{$size});
+
+  @if $size < -5 or $size > 10 {
+    @error "Invalid Font Size: $size must be between -5 and 10.";
+  }
+
+  @if $weight != regular and $weight != bold {
+    @error "Invalid Font Weight: $weight must be regular or bold.";
+  }
+}

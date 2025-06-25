@@ -1,0 +1,17 @@
+[project]
+name = "flask-data"
+version = "0.1.0"
+description = "Flask Web & Database App"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+  "python-dotenv",
+  "flask",
+  "jinja_partials",
+  "sqlmodel",
+  "duckdb",
+  "duckdb-engine",
+  "pandas",
+  "markdown",
+  "weasyprint"
+]

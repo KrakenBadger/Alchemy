@@ -1,0 +1,35 @@
+@use "../common" as *;
+
+@layer layout {
+  .landing {
+    &-container {
+      @include layout-grid(
+        $rows: 1fr 1fr,
+        $gap: var(--space-2xs),
+        $padding: 0 var(--space-2xs),
+        $full-height: true
+      );
+    }
+    &-header {
+      place-self: end center;
+      text-align: center;
+
+      .header-text {
+        @include font-set(
+          $stack: display,
+          $weight: bold,
+          $size: 6
+        );
+      }
+    }
+    &-navigation {
+      place-self: start center;
+      @include style-navbar($bg-padding: true);
+      @include font-set(
+        $stack: mono,
+        $weight: regular,
+        $size: 0
+      );
+    }
+  }
+}

@@ -1,0 +1,22 @@
+:root {
+  --color-dark-1: black;
+  --color-light-1: white;
+
+  --color-primary-50: hsl(200, 100%, 90%);
+  --color-primary-100: hsl(200, 100%, 80%);
+  --color-primary-200: hsl(200, 100%, 70%);
+  --color-primary-300: hsl(200, 100%, 60%);
+  --color-primary-400: hsl(200, 100%, 50%);
+  --color-primary-500: hsl(200, 100%, 40%);
+  --color-primary-600: hsl(200, 100%, 30%);
+  --color-primary-700: hsl(200, 100%, 20%);
+  --color-primary-800: hsl(200, 100%, 10%);
+
+  --color-accent: red;
+
+  --background-gradient: linear-gradient(
+    147deg,
+    var(--color-primary-400),
+    var(--color-primary-100)
+  );
+}

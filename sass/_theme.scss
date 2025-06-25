@@ -1,0 +1,29 @@
+@layer theme {
+  body {
+    background: var(--background-gradient);
+  }
+  .landing {
+    &-navigation {
+      background: var(--color-dark-1);
+      color: var(--color-light-1);
+    }
+  }
+  .main {
+    &-header {
+      background: var(--color-dark-1);
+      color: var(--color-light-1);
+
+      .header-text {
+        color: var(--color-light-1);
+      }
+    }
+    &-content {
+      background: var(--color-light-1);
+      color: var(--color-dark-1);
+    }
+    &-footer {
+      background: var(--color-dark-1);
+      color: var(--color-light-1);
+    }
+  }
+}

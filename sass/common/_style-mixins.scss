@@ -1,0 +1,31 @@
+@mixin navbar(
+  $gap: var(--space-3xs),
+  $padding: var(--space-s),
+  $border-width: var(--space-3xs),
+  $bg-padding: false,
+  $radius: 1rem,
+) {
+  .nav {
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $gap;
+    }
+    &-item {
+      flex: 1;
+      flex-basis: content;
+      padding-inline: $padding;
+      border-inline: $border-width solid currentColor;
+      text-align: center;
+    }
+    &-link:hover {
+      text-decoration: underline;
+      text-underline-offset: var(--space-2xs);
+    }
+  }
+  @if $bg-padding {
+    padding-inline: var(--space-xs-2xl);
+    padding-block: var(--space-xs);
+    border-radius: $radius;
+  }
+}

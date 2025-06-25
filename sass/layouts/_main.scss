@@ -1,0 +1,69 @@
+@use "../common" as *;
+
+@layer layout {
+  .main {
+    &-container {
+      @include layout-grid(
+        $rows: auto 1fr auto,
+        $gap: var(--space-s),
+        $full-height: true
+      );
+      
+      @media (width < $global-page-width) {
+        gap: 0;
+      }
+    }
+
+    &-header {
+      @include layout-grid(
+        $gap: var(--space-3xs),
+        $padding: var(--space-s),
+        $center-items: true
+      );
+      text-align: center;
+
+      .header-text {
+        @include font-set(
+          $stack: display,
+          $weight: bold,
+          $size: 5
+        );
+      }
+    }
+
+    &-navigation {
+      @include style-navbar;
+      @include font-set(
+        $stack: mono,
+        $weight: regular,
+        $size: 0
+      );
+    }
+
+    &-content {
+      container-style: inline-size;
+      @include layout-width-responsive($global-page-width);
+      padding: var(--space-xs);
+      border-radius: 1rem;
+      text-align: justify;
+
+      @media (width < 25rem) {
+        text-align: left;
+      }
+
+      @media (width < $global-page-width) {
+        border-radius: 0;
+      }
+    }
+
+    &-footer {
+      text-align: center;
+      padding: var(--space-2xs) var(--space-xs);
+      @include font-set(
+        $stack: mono,
+        $weight: regular,
+        $size: -2
+      );
+    }
+  }
+}
