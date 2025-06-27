@@ -69,3 +69,23 @@ Using Homebrew:
 ```
 brew install sass/sass/sass
 ```
+
+### Compile SCSS -> CSS
+
+Open the terminal and navigate to the project directory.
+
+Run the following command:
+
+```
+sass sass/:static/css/
+```
+
+To run the file watcher use the --watch flag:
+
+```
+sass --watch sass/:static/css/
+```
+
+The first part `sass/` is the directory where the SCSS styles are stored.
+
+The second part `static/css/` is the directory where the compiled CSS styles will be outputed.
