@@ -2,6 +2,40 @@
 
 Example Flask Website for Data Analysis.
 
+## Clone Repository
+
+To clone the respository, run the following command:
+
+```
+git clone https://github.com/KrakenBadger/Alchemy.git
+```
+
+If you do not have git installed, you can install it with the following commands:
+
+### Windows
+
+Using winget
+
+```
+winget install -e --id Git.Git
+```
+
+### Linux
+
+Using apt-get:
+
+```
+sudo apt install git
+```
+
+### MacOS 
+
+Using Homebrew:
+
+```
+brew install git
+```
+
 ## Installation Instructions
 
 This project uses Python 3.13, and UV to manage dependencies.
