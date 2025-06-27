@@ -59,9 +59,6 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 
-#### Install Dependencies and Run App
-
-- uv run app.py
 
 
 ### SASS CSS Preprocessor
@@ -103,6 +100,31 @@ Using Homebrew:
 ```
 brew install sass/sass/sass
 ```
+
+
+
+## Install Dependencies and Run App
+
+```
+uv run app.py
+```
+
+If you want to run the application in debug mode, use the --debug flag.
+
+```
+uv run app.py --debug
+```
+
+You can also specify the IP Address and Port
+
+```
+uv run app.py --host 0.0.0.0 --port 5000
+```
+
+The default IP address is localhost or 127.0.0.1, and the default port is 5000.
+
+So after running `uv run app.py`, navigate to http://127.0.0.1:5000/ to view the website.
+
 
 ### Compile SCSS -> CSS
 
