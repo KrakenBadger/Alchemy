@@ -28,3 +28,44 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 #### Install Dependencies and Run App
 
 - uv run app.py
+
+
+### SASS CSS Preprocessor
+
+If you wish to modify the CSS Styles, you will need the SASS CSS Preprocessor.
+
+You can install this with the following commands.
+
+#### Windows
+
+Using the Chocolatey Package Manager:
+
+```
+choco install sass
+```
+
+##### Chocolatey Package Manager
+
+To install Chocolatey, open Powershell as an Adminstrator:
+
+1. Check Policies
+
+```
+Get-ExecutionPolicy
+```
+
+If it returns `Restricted`, run the following command `Set-ExecutionPolicy AllSigned` or `Set-ExecutionPolicy Bypass -Scope Process`.
+
+2. Install Chocolatey
+
+```
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+#### MacOS & Linux
+
+Using Homebrew:
+
+```
+brew install sass/sass/sass
+```
